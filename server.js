@@ -18,6 +18,9 @@ app.use(
   })
 );
 connectdb();
+app.get("/", async (req, res) => {
+  res.json({ message: "server running" });
+});
 app.use("/emp", router);
 
 app.use(globalerrorhandler);
