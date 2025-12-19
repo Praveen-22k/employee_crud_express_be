@@ -4,9 +4,7 @@ const Apperror = require("../utils/Apperror");
 const getdata = async (req, res, next) => {
   try {
     const getdata = await user.find();
-    if (!getdata || getdata.length === 0) {
-      return next(new Apperror("userdetails not found", 400));
-    }
+
     return res.status(200).json({
       status: true,
       message: getdata,
